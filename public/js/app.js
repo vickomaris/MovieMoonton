@@ -4486,11 +4486,16 @@ function Input(_ref) {
     type = _ref$type === void 0 ? 'text' : _ref$type,
     name = _ref.name,
     value = _ref.value,
+    defaultValue = _ref.defaultValue,
     className = _ref.className,
+    _ref$variant = _ref.variant,
+    variant = _ref$variant === void 0 ? "primary" : _ref$variant,
     autoComplete = _ref.autoComplete,
     required = _ref.required,
     isFocused = _ref.isFocused,
-    handleChange = _ref.handleChange;
+    handleChange = _ref.handleChange,
+    placeholder = _ref.placeholder,
+    isError = _ref.isError;
   var input = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (isFocused) {
@@ -4503,13 +4508,14 @@ function Input(_ref) {
       type: type,
       name: name,
       value: value,
-      className: "border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm " + className,
+      className: "rounded-2xl bg-form-bg py-[13px] px-7 w-full input-".concat(variant, " ").concat(className),
       ref: input,
       autoComplete: autoComplete,
       required: required,
       onChange: function onChange(e) {
         return handleChange(e);
-      }
+      },
+      placeholder: placeholder
     })
   });
 }
@@ -5501,6 +5507,97 @@ function Dashboard(props) {
             children: "You're logged in!"
           })
         })
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Prototype/Login.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/Prototype/Login.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Login)
+/* harmony export */ });
+/* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Input */ "./resources/js/Components/Input.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function Login() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "mx-auto max-w-screen min-h-screen bg-black text-white md:px-10 px-3",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "fixed top-[-50px] hidden lg:block",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        src: "/images/signup-image.png",
+        className: "hidden laptopLg:block laptopLg:max-w-[450px] laptopXl:max-w-[640px]",
+        alt: ""
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "py-24 flex laptopLg:ml-[680px] laptopXl:ml-[870px]",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: "/images/moonton-white.svg",
+          alt: ""
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "my-[70px]",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "font-semibold text-[26px] mb-3",
+            children: "Welcome Back"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+            className: "text-base text-[#767676] leading-7",
+            children: ["Explore our new movies and get ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "the better insight for your life"]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+          className: "w-[370px]",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "flex flex-col gap-6",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                className: "text-base block mb-2",
+                children: "Email Address"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_0__["default"], {
+                type: "email",
+                name: "email",
+                placeholder: "Email Address"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                className: "text-base block mb-2",
+                children: "Password"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "password",
+                name: "password",
+                className: "rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none",
+                placeholder: "Password"
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "grid space-y-[14px] mt-[30px]",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "/",
+              className: "rounded-2xl bg-alerange py-[13px] text-center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "text-base font-semibold",
+                children: "Start Watching"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "sign_up.html",
+              className: "rounded-2xl border border-white py-[13px] text-center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "text-base text-white",
+                children: "Create New Account"
+              })
+            })]
+          })]
+        })]
       })
     })]
   });
@@ -59057,6 +59154,8 @@ var map = {
 	"./Auth/VerifyEmail.js": "./resources/js/Pages/Auth/VerifyEmail.js",
 	"./Dashboard": "./resources/js/Pages/Dashboard.js",
 	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
+	"./Prototype/Login": "./resources/js/Pages/Prototype/Login.js",
+	"./Prototype/Login.js": "./resources/js/Pages/Prototype/Login.js",
 	"./Welcome": "./resources/js/Pages/Welcome.js",
 	"./Welcome.js": "./resources/js/Pages/Welcome.js"
 };
