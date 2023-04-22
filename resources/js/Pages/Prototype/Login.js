@@ -1,7 +1,7 @@
 import Input from "@/Components/Input";
 import Label from "@/Components/Label";
 import Button from "@/Components/Button";
-import { Link, Head} from "@inertiajs/inertia-react";
+import { Link, Head } from "@inertiajs/inertia-react";
 
 export default function Login() {
     return (
@@ -54,11 +54,13 @@ export default function Login() {
                                 </div>
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
-                                <Button type="button" variant="primary">
-                                    <span className="text-base font-semibold">
-                                        Start Watching
-                                    </span>
-                                </Button>
+                                <Link href={route("prototype.dashboard")}>
+                                    <Button type="button" variant="primary">
+                                        <span className="text-base font-semibold">
+                                            Start Watching
+                                        </span>
+                                    </Button>
+                                </Link>
                                 <Link href={route("prototype.register")}>
                                     <Button
                                         type="button"
