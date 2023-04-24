@@ -11,22 +11,28 @@
     },
     "devDependencies": {
         "@babel/preset-react": "^7.16.7",
-        "@headlessui/react": "^1.4.2",
+        "@headlessui/react": "^1.7.14",
         "@inertiajs/inertia": "^0.11.0",
         "@inertiajs/inertia-react": "^0.8.0",
         "@inertiajs/progress": "^0.2.6",
-        "@pmmmwh/react-refresh-webpack-plugin": "^0.5.0-rc.0",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
         "@tailwindcss/forms": "^0.4.0",
         "alpinejs": "^3.4.2",
         "autoprefixer": "^10.4.2",
         "axios": "^0.25",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.4.6",
+        "postcss": "^8.4.22",
         "postcss-import": "^14.0.2",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-refresh": "^0.14.0",
         "tailwindcss": "^3.0.18"
+    },
+    "dependencies": {
+        "flickity": "^3.0.0",
+        "prop-types": "^15.8.1",
+        "react-flickity-component": "^4.0.5",
+        "react-player": "^2.12.0"
     }
 }
