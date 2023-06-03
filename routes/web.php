@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\MovieContoroller;
+use App\Http\Controllers\User\SubscriptionPlanController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,9 @@ Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashbo
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
     Route::get('movie/{movie:slug}', [MovieContoroller::class, 'show'])->name('movie.show');
+
+    Route::get('subscription-plan', [SubscriptionPlanController::class, 'index'])->name('subscriptionPlan.index');
+    Route::post('subscription-plan/{subscriptionPlan}/user-subscribe', [SubscriptionPlanController::class, 'userSubscribe'])->name('subscriptionPlan.userSubscribe');
 });
 
 Route::prefix('prototype')->name('prototype.')->group(function () {
@@ -47,4 +52,4 @@ Route::prefix('prototype')->name('prototype.')->group(function () {
     })->name('movie.show');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

@@ -1,5 +1,6 @@
 import { Link } from "@inertiajs/inertia-react";
-export default function Sidebar() {
+import SubscriptionDetail from "./SubscriptionDetail";
+export default function Sidebar({ auth }) {
     return (
         <aside className="fixed z-50 w-[300px] h-full">
             <div className="flex flex-col p-[30px] pr-0 border-r border-gray-[#F1F1F1] overflow-y-auto h-full">
@@ -9,7 +10,10 @@ export default function Sidebar() {
                 <div className="links flex flex-col mt-[60px] h-full gap-[50px]">
                     <div>
                         <div className="text-gray-1 text-sm mb-4">Menu</div>
-                        <Link href={route('prototype.dashboard')} className="side-link active">
+                        <Link
+                            href={route("user.dashboard.index")}
+                            className="side-link active"
+                        >
                             <svg
                                 width="24"
                                 height="24"
@@ -80,7 +84,12 @@ export default function Sidebar() {
 
                     <div>
                         <div className="text-gray-1 side-link mb-4">Others</div>
-                        <Link href={route('prototype.subscriptionPlan')} className="side-link">
+                        <Link
+                            href={route(
+                                "user.dashboard.subscriptionPlan.index"
+                            )}
+                            className="side-link"
+                        >
                             <svg
                                 width="24"
                                 height="24"
@@ -146,24 +155,17 @@ export default function Sidebar() {
                             Logout
                         </a>
                     </div>
-
-                    <div className="mt-auto pr-[30px]">
-                        <div className="p-5 bg-black rounded-[25px]">
-                            <img
-                                src="/icons/ic_star-rounded.svg"
-                                alt=""
-                            />
-                            <div className="text-white text-lg font-semibold mt-4 mb-8">
-                                For Greatest
-                            </div>
-                            <div className="text-white text-sm mb-2">
-                                12 of 30 hari
-                            </div>
-                            <div className="rounded-full w-full h-[6px] bg-[#333333]">
-                                <div className="rounded-full h-full w-9/12 bg-alerange"></div>
-                            </div>
-                        </div>
-                    </div>
+                    {/* <SubscriptionDetail isPremium /> */}
+                    {auth.activePlan && (
+                        <SubscriptionDetail
+                            name={auth.activePlan.name}
+                            isPremium={auth.activePlan.name === "Premium"}
+                            remainingActiveDays={
+                                auth.activePlan.remainingActiveDays
+                            }
+                            activeDays={auth.activePlan.activeDays}
+                        />
+                    )}
                 </div>
             </div>
         </aside>
